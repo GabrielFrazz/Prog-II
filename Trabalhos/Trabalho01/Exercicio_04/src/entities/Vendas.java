@@ -1,4 +1,4 @@
-package entities;
+ package entities;
 
 public class Vendas {
     
@@ -31,5 +31,15 @@ public class Vendas {
             vetMes[i] = aux;
         }
         return vetMes;
+    }
+
+    public double totalAno(){
+        double total = 0;
+        for(int i = 0; i < 12; i++){
+            for(int j = 0; j < 4; j++){
+                total += matVendas[i][j];
+            }
+        }
+        return total;
     }
 }
