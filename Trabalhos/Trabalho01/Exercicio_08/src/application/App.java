@@ -20,7 +20,6 @@ public class App {
         sc.nextLine();
  
         //inicio
-        System.out.println();
         System.out.print("qual o tamanho do conjunto A: ");
         int tamA = sc.nextInt();
 
@@ -61,7 +60,11 @@ public class App {
             setB.adicionarElemento(conjB[i]);
         }
 
-        System.out.println(setA.toString());
+        System.out.println();
+        System.out.println("conj A = " + setA.toString());
+
+        System.out.println();
+        System.out.println("conj B = " + setB.toString());
 
         boolean loop = true;
         IntegerSet result = new IntegerSet();
