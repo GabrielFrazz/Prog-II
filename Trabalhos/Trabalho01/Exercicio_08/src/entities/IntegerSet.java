@@ -72,7 +72,7 @@ public class IntegerSet {
                 stringFinal.append(i).append(' ');
             }
         }
-        
+
         return conjVazio ? "---" : stringFinal.append('}').toString();
     }
 
