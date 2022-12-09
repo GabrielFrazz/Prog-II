@@ -59,6 +59,7 @@ public class IntegerSet {
         set[elemento] = false;
     }
 
+    @Override
     public String toString() {
 
         boolean conjVazio = true;

@@ -9,7 +9,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        //Apresentação
+        // Apresentação
 
         System.out.println("olá usuário!");
         System.out.println("nesse programa você deve digitar dois conjuntos numéricos");
@@ -18,8 +18,8 @@ public class App {
         System.out.println("*não devem haver numeros repetidos");
         System.out.println("---precione ENTER para continuar---");
         sc.nextLine();
- 
-        //inicio
+
+        // inicio
         System.out.print("qual o tamanho do conjunto A: ");
         int tamA = sc.nextInt();
 
@@ -28,7 +28,7 @@ public class App {
         System.out.println();
         System.out.println("entre com os elementos do conjunto A");
 
-        for(int i = 0; i < conjA.length; i++){
+        for (int i = 0; i < conjA.length; i++) {
             System.out.print("-->");
             conjA[i] = sc.nextInt();
         }
@@ -42,7 +42,7 @@ public class App {
         System.out.println();
         System.out.println("entre com os elementos do conjunto B");
 
-        for(int i = 0; i < conjB.length; i++){
+        for (int i = 0; i < conjB.length; i++) {
             System.out.print("-->");
             conjB[i] = sc.nextInt();
         }
@@ -50,13 +50,13 @@ public class App {
         IntegerSet setA = new IntegerSet();
         IntegerSet setB = new IntegerSet();
 
-        //preenchendo setA 
-        for(int i = 0; i < conjA.length; i++){
+        // preenchendo setA
+        for (int i = 0; i < conjA.length; i++) {
             setA.adicionarElemento(conjA[i]);
         }
 
-        //preenchendo setB
-        for(int i = 0; i < conjB.length; i++){
+        // preenchendo setB
+        for (int i = 0; i < conjB.length; i++) {
             setB.adicionarElemento(conjB[i]);
         }
 
@@ -69,7 +69,7 @@ public class App {
         boolean loop = true;
         IntegerSet result = new IntegerSet();
 
-        do{
+        do {
 
             System.out.println();
             System.out.println("escolha uma opção: ");
@@ -81,25 +81,25 @@ public class App {
 
             int opc = sc.nextInt();
 
-            if(opc == 1){
+            if (opc == 1) {
                 result = result.uniao(setA, setB);
 
                 System.out.println();
                 System.out.println("AUB = " + result.toString());
             }
-            if(opc == 2){
+            if (opc == 2) {
                 result = result.intersecao(setA, setB);
 
                 System.out.println();
                 System.out.println("A(intersec)B = " + result.toString());
             }
-            if(opc == 3){
+            if (opc == 3) {
                 result = result.diferencaAB(setA, setB);
 
                 System.out.println();
                 System.out.println("A-B = " + result.toString());
             }
-            if(opc == 4){
+            if (opc == 4) {
                 result = result.diferencaBA(setA, setB);
 
                 System.out.println();
@@ -111,14 +111,13 @@ public class App {
 
             int continuar = sc.nextInt();
 
-            if(continuar == 1){
+            if (continuar == 1) {
                 loop = true;
-            }
-            else if(continuar == 2){
+            } else if (continuar == 2) {
                 loop = false;
             }
 
-        }while(loop == true);
+        } while (loop == true);
 
         sc.close();
     }
