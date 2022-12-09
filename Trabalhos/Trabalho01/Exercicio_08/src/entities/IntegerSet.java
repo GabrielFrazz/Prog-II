@@ -74,7 +74,7 @@ public class IntegerSet {
             }
         }
 
-        return conjVazio ? "---" : stringFinal.append('}').toString();
+        return conjVazio ? "conj vazio" : stringFinal.append('}').toString();
     }
 
 }
