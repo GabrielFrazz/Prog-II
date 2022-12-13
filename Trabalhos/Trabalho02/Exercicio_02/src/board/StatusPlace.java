@@ -1,6 +1,8 @@
-package game;
+package board;
 
 public enum StatusPlace {
     PLAYER_ONE,
-    PLAYER_TWO;
+    PLAYER_TWO,
+    EMPTY;
+
 }

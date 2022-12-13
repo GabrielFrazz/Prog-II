@@ -2,8 +2,8 @@ package application;
 
 import java.util.Scanner;
 
-import game.StatusPlace;
-import game.TicTacToe;
+import board.StatusPlace;
+import temp.TicTacToe;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -12,16 +12,23 @@ public class App {
         
         TicTacToe game = new TicTacToe();
 
-        System.out.println("digite as posições no formato num/letra");
-
         game.imprimeTabuleiro();
 
         sc.nextLine();
-        
+
         game.converteEntrada(1, 'a', StatusPlace.PLAYER_ONE);
+        game.converteEntrada(1, 'b', StatusPlace.PLAYER_ONE);
+        game.converteEntrada(1, 'c', StatusPlace.PLAYER_ONE);
 
         game.imprimeTabuleiro();
+        sc.nextLine();
 
+        if(game.converteEntradaVitoria(1, 'c', StatusPlace.PLAYER_ONE) == 1){
+            System.out.println("vitória do jogador 1");
+        }
+        else if(game.checaVitoria(1, 'c', StatusPlace.PLAYER_ONE) == -1){
+            System.out.println("teste");
+        }
         sc.close();
 
     }
