@@ -35,13 +35,9 @@ public class App {
          System.out.println();
 
          for(Plantas p : vect){
-            if(p.faltando()>0){
+        
             System.out.println(p.toString());
-            }
-            else{
-                System.out.println(p.getName() + ": ");
-                System.out.println("já possui quantidade ideal");
-            }
+
             System.out.println();
          }
 

@@ -33,7 +33,16 @@ public class Plantas {
     }
 
     public int faltando() {
-        return qtd_id - qtd;
+        return qtd_id - qtd < 0 ? -1 : qtd_id - qtd; 
+    }
+
+    public String aComprar(){
+        if(faltando() == -1){
+            return "\nJa possui quantidade ideal!";
+        }
+        else{
+            return "\na comprar: " + faltando();
+        }
     }
 
     @Override
@@ -45,8 +54,8 @@ public class Plantas {
                 + " unidades "
                 +" \nqtd ideal: "
                 + qtd_id
-                + "\na comprar: "
-                + faltando();
+                + aComprar();
+                
     }
 
 }
