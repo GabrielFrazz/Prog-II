@@ -33,7 +33,7 @@ public class App {
          }
 
          System.out.println();
-
+         
          for(Plantas p : vect){
         
             System.out.println(p.toString());

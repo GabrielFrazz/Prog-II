@@ -11,7 +11,15 @@ public class Position {
         this.column = column;
         this.status = status;
     } 
+    
+    public Position(int row, int column){ //new constructor
+        this.row = row;
+        this.column = column;
+    } 
 
+    public Position(int row, char column){
+        if
+    }
     /**
      * @return int return the row
      */

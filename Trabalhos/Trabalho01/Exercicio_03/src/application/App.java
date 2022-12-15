@@ -17,16 +17,17 @@ public class App {
         int num;
 
         System.out.print("digite um numero: ");
+
         num = sc.nextInt();
 
         System.out.println();
 
-        System.out.println("F(" + num + ") = " + calculaSequencia(num, num, num));
+        System.out.println("F(" + num + ") = " + calculaSequencia(num));
 
         sc.close();
     }
 
-    public static int calculaSequencia(int num, int num1, int num2) {
+    public static int calculaSequencia(int num) {
 
         int F;
 
@@ -35,18 +36,14 @@ public class App {
             return F;
         }
 
-        if ((num1 - 1) == 1 || (num1 - 1) == 2 && (num2 - 2) == 1 || (num2 - 2) == 2) {
-            num1 = num1 - 1;
-            num2 = num2 - 2;
-            F = 2 * num1 + 3 * num2;
+        if (num == 2) {
+            F = 2;
             return F;
 
         }
 
         else {
-            num1 = num1 - 1;
-            num2 = num2 - 2;
-            F = calculaSequencia(num, num1, num2);
+            F = (2 * calculaSequencia(num - 1)) + (3 * calculaSequencia(num - 2));
             return F;
         }
 

@@ -2,33 +2,32 @@ package application;
 
 import java.util.Scanner;
 
+import board.Position;
 import board.StatusPlace;
+import board.TheBoard;
 import temp.TicTacToe;
+import tictactoe.Player;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
         Scanner sc = new Scanner(System.in);
         
-        TicTacToe game = new TicTacToe();
+        TheBoard board = new TheBoard();
+        Player player = new Player();
+        Position[][] position = new Position[3][3];
+        position = board.getPosition();
 
-        game.imprimeTabuleiro();
+        board.placePlayer(1, player, position[0][1]);
 
         sc.nextLine();
 
-        game.converteEntrada(1, 'a', StatusPlace.PLAYER_ONE);
-        game.converteEntrada(1, 'b', StatusPlace.PLAYER_ONE);
-        game.converteEntrada(1, 'c', StatusPlace.PLAYER_ONE);
+        board.imprimeTabuleiro();
 
-        game.imprimeTabuleiro();
-        sc.nextLine();
+        board.placePlayer(1, player, position[1][1]);
 
-        if(game.converteEntradaVitoria(1, 'c', StatusPlace.PLAYER_ONE) == 1){
-            System.out.println("vitória do jogador 1");
-        }
-        else if(game.checaVitoria(1, 'c', StatusPlace.PLAYER_ONE) == -1){
-            System.out.println("teste");
-        }
+        board.imprimeTabuleiro();
+
         sc.close();
 
     }
