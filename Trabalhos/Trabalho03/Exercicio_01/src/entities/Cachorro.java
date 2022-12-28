@@ -1,11 +1,15 @@
 package entities;
 
-public class Cachorro extends Animal{
+public class Cachorro extends Animal {
 
     private String raca;
 
-    public Cachorro(String nome, Double peso, String raca){
-        super(nome, peso);
+    public Cachorro() {
+
+    }
+
+    public Cachorro(String nome, String raca) {
+        super(nome);
         this.raca = raca;
     }
 
@@ -16,6 +20,10 @@ public class Cachorro extends Animal{
         return raca;
     }
 
+    public void setPeso(Double peso) {
+        super.setPeso(peso);
+    }
+
     /**
      * @param raca the raca to set
      */
@@ -24,12 +32,21 @@ public class Cachorro extends Animal{
     }
 
     @Override
-    public String toString(){
-        return super.getNome()
-        + ", "
-        + super.getPeso()
-        + "Kg \n" + "Raça: "
-        + raca;
+    public String toString() {
+        if (super.getPeso() == null) {
+
+            return super.getNome()
+                    + ", "
+                    + "Peso não registrado"
+                    + "\n" + "Raça: "
+                    + raca;
+        } else {
+            return super.getNome()
+                    + ", "
+                    + super.getPeso()
+                    + "Kg \n" + "Raça: "
+                    + raca;
+        }
     }
 
 }

@@ -8,35 +8,62 @@ import entities.Peixe;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        
+
         Scanner sc = new Scanner(System.in);
         Locale.setDefault(Locale.US);
 
+        Peixe p = new Peixe();
         System.out.println("Digite as informações do peixe: ");
 
         System.out.print("nome: ");
         String nome = sc.nextLine();
-        System.out.print("peso: ");
-        Double peso = sc.nextDouble();
+        System.out.println("Deseja registrar o peso?\ny-sim|n-não");
+        char tst = sc.next().charAt(0);
+
+
+        Double peso = 0.0;
+
+        if (tst == 'y') {
+            System.out.print("peso: ");
+            peso = sc.nextDouble();
+        }
+
         System.out.print("Habitat: ");
         sc.nextLine();
         String tipoHabitat = sc.nextLine();
 
-        Peixe p = new Peixe(nome, peso, tipoHabitat);
+        p = new Peixe(nome, tipoHabitat);
+
+        if(tst == 'y'){
+            p.setPeso(peso);
+        }
 
         System.out.println();
 
+        Cachorro c = new Cachorro();
         System.out.println("Digite as informações do Cachorro: ");
 
         System.out.print("nome: ");
         nome = sc.nextLine();
-        System.out.print("peso: ");
-        peso = sc.nextDouble();
+        System.out.println("Deseja registrar o peso?\ny-sim|n-não");
+        tst = sc.next().charAt(0);
+
+        peso = 0.0;
+
+        if (tst == 'y') {
+            System.out.print("peso: ");
+            peso = sc.nextDouble();
+        }
+
         System.out.print("Raça: ");
         sc.nextLine();
+
         String raca = sc.nextLine();
 
-        Cachorro c = new Cachorro(nome, peso, raca);
+        c = new Cachorro(nome, raca);
+        if(tst == 'y'){
+            c.setPeso(peso);
+        }
 
         System.out.println();
 

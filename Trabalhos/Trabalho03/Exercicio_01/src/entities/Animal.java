@@ -5,9 +5,11 @@ public class Animal {
     private String nome;
     private Double peso;
 
-    public Animal(String nome, Double peso){
+    public Animal(){
+        
+    }
+    public Animal(String nome){
         this.nome = nome;
-        this.peso = peso;
     }
     
     /**
@@ -15,13 +17,6 @@ public class Animal {
      */
     public String getNome() {
         return nome;
-    }
-
-    /**
-     * @param nome the nome to set
-     */
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     /**

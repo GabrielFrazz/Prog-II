@@ -4,8 +4,12 @@ public class Peixe extends Animal{
 
     private String tipoHabitat;
 
-    public Peixe(String nome, Double peso, String tipoHabitat){
-        super(nome, peso);
+    public Peixe(){
+        
+    }
+
+    public Peixe(String nome, String tipoHabitat){
+        super(nome);
         this.tipoHabitat = tipoHabitat;
     }
 
@@ -21,6 +25,10 @@ public class Peixe extends Animal{
      */
     public void setTipoHabitat(String tipoHabitat) {
         this.tipoHabitat = tipoHabitat;
+    }
+
+    public void setPeso(Double peso){
+        super.setPeso(peso);
     }
 
     @Override
