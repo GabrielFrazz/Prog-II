@@ -47,7 +47,7 @@ public class Client extends Person {
                 + super.getName()
                 + ", "
                 + super.getAge()
-                + ", "
+                + "y, "
                 + super.getSex()
                 + ", "
                 + yearOfBirth
