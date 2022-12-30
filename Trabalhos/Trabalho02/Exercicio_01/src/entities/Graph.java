@@ -1,9 +1,17 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Graph {
 
     private Integer tam;
     private Boolean[][] graph;
+
+    public Graph() {
+
+    }
 
     public Graph(Integer tam) {
         this.tam = tam;
@@ -17,21 +25,27 @@ public class Graph {
 
     }
 
-    public void setGrafo(Integer[][] graph) {
+    public void setGraph(Integer[][] graph) {
         for (int i = 0; i < tam; i++) {
             for (int j = 0; j < tam; j++) {
-                if (graph[i][j] == 0) {
+                if (i == j && graph[i][j] == 1) {
+                    throw new GraphException("the leading diagonal must consist of 0's ");
+                } else if (graph[i][j] == 0) {
                     this.graph[i][j] = false;
                 } else if (graph[i][j] == 1) {
                     this.graph[i][j] = true;
                 } else {
-                    throw new GraphException("The graph matrix must be compose only of 0's and 1's");
+                    throw new GraphException("The graph Adjacency matrix must be compose only of 0's and 1's");
                 }
             }
         }
     }
 
-    public Integer[][] getGrafo() {
+    public Boolean[][] getGraph() {
+        return graph;
+    }
+
+    public Integer[][] convertGraph() {
 
         Integer[][] matrix = new Integer[tam][tam];
 
@@ -48,25 +62,42 @@ public class Graph {
         return matrix;
     }
 
-    public void printGraph(){
-        for(int i = 0; i < tam; i++){
-            System.out.print((i+1) + " ");
-            for(int j = 0; j < tam; j++){
-                if (this.graph[i][j] == false) {
-                    System.out.print("0 ");
-                } else if (graph[i][j] == true) {
-                    System.out.print("1 ");
+    public void generateRandomGraph() {
+        Random rand = new Random();
+        int tam = rand.nextInt(3, 6);
+        this.tam = tam;
+        graph = new Boolean[tam][tam];
+        for (int i = 0; i < tam; i++) {
+            for (int j = 0; j < tam; j++) {
+                if (i == j) {
+                    this.graph[i][j] = false;
+                } else {
+                    this.graph[i][j] = rand.nextBoolean();
                 }
             }
-            System.out.println();
         }
-         for(int i = 1; i <= tam; i++){
-            if(i == 1){
-            System.out.print("  ");
-            }
-            System.out.print(i + " ");
+    }
 
+    public Integer getTam() {
+        return tam;
+    }
+
+    public void setTam(Integer tam) {
+        this.tam = tam;
+    }
+
+    public Boolean areVerticesNeighbors(Integer v1, Integer v2) {
+        return (graph[(v1 - 1)][(v2 - 1)] == true) ? true : false;
+    }
+
+    public List<Integer> neighborsVertices(Integer v) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < tam; i++) {
+            if (graph[(v - 1)][i]) {
+                list.add(i + 1);
+            }
         }
+        return list;
     }
 
 }
