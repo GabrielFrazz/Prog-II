@@ -87,10 +87,20 @@ public class Graph {
     }
 
     public Boolean areVerticesNeighbors(Integer v1, Integer v2) {
+        if (v1 > tam) {
+            throw new GraphException("v1: non-existent vertice");
+        }
+        if (v2 > tam) {
+            throw new GraphException("v2: non-existent vertice");
+        }
+
         return (graph[(v1 - 1)][(v2 - 1)] == true) ? true : false;
     }
 
     public List<Integer> neighborsVertices(Integer v) {
+        if (v > tam) {
+            throw new GraphException("non-existent vertice");
+        }
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < tam; i++) {
             if (graph[(v - 1)][i]) {
