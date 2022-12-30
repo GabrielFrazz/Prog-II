@@ -106,7 +106,7 @@ public class UI {
 
         System.out.println("--------------------WARNING--------------------");
         System.out.println("the matrix must be composed only of 0's and 1's");
-        System.out.println("the leading diagonal must me composed of 0's");
+        System.out.println("the leading diagonal must be composed of 0's");
         System.out.println("leading diagonal will be shown as: " + "!-->");
         System.out.println();
 
