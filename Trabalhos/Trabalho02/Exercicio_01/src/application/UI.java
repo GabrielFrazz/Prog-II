@@ -35,7 +35,7 @@ public class UI {
 
     }
 
-    public Integer firstMenu() {
+    public void firstMenu() {
 
         System.out.println();
         System.out.println("Select an option:");
@@ -49,10 +49,14 @@ public class UI {
             throw new UiException("invalid value");
         }
 
-        return c;
+        if (c == 1)
+            graphInput();
+        else
+            randomGraph();
+
     }
 
-    public Integer secondMenu() {
+    public void secondMenu() {
 
         System.out.println();
         System.out.println("Select an option:");
@@ -66,10 +70,15 @@ public class UI {
             throw new UiException("invalid value");
         }
 
-        return c;
+        if (c == 1) {
+            neighborsVertices();
+        } else {
+            allNeighbors();
+        }
+
     }
 
-    public Integer thirdMenu() {
+    public void thirdMenu() {
 
         System.out.println();
         System.out.println("Select an option:");
@@ -84,11 +93,15 @@ public class UI {
             throw new UiException("invalid value");
         }
 
-        if (c == 3) {
+        if (c == 1) {
+            firstMenu();
+        } else if (c == 2) {
+            secondMenu();
+        } else if (c == 3) {
             sc.close();
+            return;
         }
 
-        return c;
     }
 
     public void graphInput() {
@@ -135,6 +148,8 @@ public class UI {
         printGraph(g.getGraph());
 
         System.out.println();
+
+        secondMenu();
     }
 
     public void randomGraph() {
@@ -147,6 +162,8 @@ public class UI {
         printGraph(g.getGraph());
 
         System.out.println();
+
+        secondMenu();
     }
 
     public void neighborsVertices() {
@@ -166,6 +183,8 @@ public class UI {
         } else {
             System.out.println("no, they are not neighbors.");
         }
+
+        thirdMenu();
 
     }
 
@@ -193,6 +212,8 @@ public class UI {
         }
 
         System.out.println();
+
+        thirdMenu();
     }
 
     public static void printGraph(Boolean[][] graph) {
