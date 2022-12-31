@@ -217,8 +217,25 @@ public class UI {
     }
 
     public static void printGraph(Boolean[][] graph) {
+        System.out.println();
+        for (int i = 1; i <= graph.length; i++) {
+            if (i == 1) {
+                System.out.print("    ");
+            }
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i = 1; i <= graph.length; i++) {
+            if (i == 1) {
+                System.out.print("   ");
+            }
+            
+            System.out.print(" _");
+
+        }
+        System.out.println();
         for (int i = 0; i < graph.length; i++) {
-            System.out.print((i + 1) + " ");
+            System.out.print((i + 1) + "  |");
             for (int j = 0; j < graph.length; j++) {
                 if (graph[i][j] == false) {
                     System.out.print("0 ");
@@ -228,13 +245,7 @@ public class UI {
             }
             System.out.println();
         }
-        for (int i = 1; i <= graph.length; i++) {
-            if (i == 1) {
-                System.out.print("  ");
-            }
-            System.out.print(i + " ");
-
-        }
+        
     }
 
 }
