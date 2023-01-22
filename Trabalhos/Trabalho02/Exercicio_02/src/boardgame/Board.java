@@ -4,9 +4,11 @@ public class Board {
     
     protected static final int tam = 3;
     private char[][] board;
+    private PlayerEnum[][] status;
 
     public Board(){
         board = new char[3][3];
+        status = new PlayerEnum[3][3];
         clear();
     }
 
@@ -14,11 +16,28 @@ public class Board {
         for(int i = 0; i < tam; i++){
             for(int j = 0; j < tam; j++){
                 board[i][j] = ' ';
+                status[i][j] = PlayerEnum.EMPTY;
             }
         }
     }
 
+    public boolean isEmpty(int row, int collumn){
+        if(status[row][collumn] == PlayerEnum.EMPTY){
+            return false;
+        }
+        System.out.println();
+        System.out.println("position already taken! ");
+        System.out.println();
+        return true;
+    }
+
     public void setPlayer(int row, int collumn, char symbol){
+        if(symbol == 'O'){
+            status[row][collumn] = PlayerEnum.PLAYER2;
+        }
+        else if(symbol == 'X'){
+            status[row][collumn] = PlayerEnum.PLAYER1;
+        }
         board[row][collumn] = symbol;
     }
 

@@ -37,8 +37,11 @@ public class Game {
 
             System.out.println();
 
-            int row = currentPlayer.row(sc);
-            int col = currentPlayer.column(sc);
+            int row,col;
+            do{
+             row = currentPlayer.row(sc);
+             col = currentPlayer.column(sc);
+            }while(board.isEmpty(row, col));
 
             board.setPlayer(row, col, currentPlayer.getSymbol());
 
