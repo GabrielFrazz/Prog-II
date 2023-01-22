@@ -1,6 +1,6 @@
 package boardgame;
 
-public enum PlayerEnum {
+public enum StatusPlace {
     PLAYER1,
     PLAYER2,
     EMPTY;
