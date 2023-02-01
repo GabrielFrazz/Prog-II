@@ -12,6 +12,7 @@ public class App {
         Player p1 = new Player("Player_one", 'X');
         Player p2 = new Player("Player_two", 'O');
         Game game = new Game(p1, p2);
+        
         game.welcome(sc);
         sc.close();
         
