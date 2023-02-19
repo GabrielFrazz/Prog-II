@@ -21,13 +21,11 @@ public class App {
         forma.add(q);
         forma.add(t);
 
-        for(int i = 0; i<forma.size();i++){
-            FormaBidimencional corrente = forma.get(i);
-            System.out.println("tipo: " + corrente.getClass().getSimpleName());
-            System.out.println("Area: " + corrente.calculaArea());
-            System.out.println("Perimetro: " + corrente.calculaPerimetro());
+        for(FormaBidimencional f : forma){
+            System.out.println(f.getClass().getSimpleName());
+            System.out.println(f.calculaArea());
+            System.out.println(f.calculaPerimetro());
         }
-
 
     }
 }
