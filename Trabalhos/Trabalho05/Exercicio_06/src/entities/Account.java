@@ -31,9 +31,9 @@ public class Account {
 
     public Double saca(double amount) throws AccountException {
         if (amount > balance + limit) {
-            throw new AccountException("Limite excedido", balance);
+            throw new AccountException("Limite excedido");
         } else if (amount > balance) {
-            throw new AccountException("Saldo insuficiente", balance);
+            throw new AccountException("Saldo insuficiente");
         } else {
             balance = balance - amount;
             return amount;
