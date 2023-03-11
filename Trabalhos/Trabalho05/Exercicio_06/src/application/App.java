@@ -15,8 +15,12 @@ public class App {
         }catch(AccountException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
+            System.out.println(e.getBalance());
+        }finally{
+            System.out.println(myAccount.getBalance());
         }
 
-
+        //agora a classe AccountException também tem o atributo saldo
+        //bloco finally adicionado, retorna o saldo da conta
     }
 }

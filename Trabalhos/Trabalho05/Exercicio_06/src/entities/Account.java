@@ -1,7 +1,7 @@
 package entities;
 
 public class Account {
-    
+
     private double balance;
     private double limit;
 
@@ -25,17 +25,18 @@ public class Account {
         this.limit = limit;
     }
 
-    public void deposita(double amount){
-        balance+=amount;
+    public void deposita(double amount) {
+        balance += amount;
     }
 
-    public Double saca(double amount) throws AccountException{
-        if(amount < balance){
-        balance = balance - amount;
-        return amount;
-        }
-        else{
-            throw new AccountException("saldo insuficiente");
+    public Double saca(double amount) throws AccountException {
+        if (amount > balance + limit) {
+            throw new AccountException("Limite excedido", balance);
+        } else if (amount > balance) {
+            throw new AccountException("Saldo insuficiente", balance);
+        } else {
+            balance = balance - amount;
+            return amount;
         }
     }
 
