@@ -2,7 +2,7 @@ package entities;
 
 public class FormasGeoFactory {
     
-    public static FormasGeometricas criaForma(String forma){
+    public static FormasGeometricas getForma(String forma){
         if(forma == null){
             return null;
         }
